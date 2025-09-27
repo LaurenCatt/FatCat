@@ -10,19 +10,4 @@ config_version=5
 
 [application]
 
-config/name="FATCAT"
-run/main_scene="uid://bnr4245nxlhdf"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://Design/icon.svg"
-
-[autoload]
-
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
-
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://dialogue/lore.dialogue")
+config/features=PackedStringArray("4.5")
