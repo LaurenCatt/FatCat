@@ -10,4 +10,6 @@ config_version=5
 
 [application]
 
+config/name="Fat"
+run/main_scene="uid://bnr4245nxlhdf"
 config/features=PackedStringArray("4.5")

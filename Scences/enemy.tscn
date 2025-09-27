@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://drtcanhiqyicv"]
+[gd_scene load_steps=17 format=3 uid="uid://dsij0684frd0i"]
 
-[ext_resource type="Script" uid="uid://bdc7rpygc28a8" path="res://Scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dni1sa0c8stk4" path="res://Design/Rats.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bdc7rpygc28a8" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://dni1sa0c8stk4" path="res://Rats.png" id="1_7k104"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwjut"]
 atlas = ExtResource("1_7k104")
@@ -64,7 +64,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ar8e5")
 }],
 "loop": true,
-"name": &"down",
+"name": &"walk_back",
 "speed": 5.0
 }, {
 "frames": [{
@@ -78,7 +78,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wujgv")
 }],
 "loop": true,
-"name": &"left",
+"name": &"walk_left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -92,7 +92,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dxifv")
 }],
 "loop": true,
-"name": &"right",
+"name": &"walk_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -106,20 +106,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_iifgy")
 }],
 "loop": true,
-"name": &"up",
+"name": &"walk_up",
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(21, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k104"]
+radius = 4.99969
+height = 25.9984
 
-[node name="Rat" type="CharacterBody2D"]
+[node name="Rats" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
+speed = null
+player_path = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pwjut")
-animation = &"right"
+animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 12)
-shape = SubResource("RectangleShape2D_4gyqm")
+position = Vector2(3, 11)
+rotation = -1.55958
+shape = SubResource("CapsuleShape2D_7k104")
