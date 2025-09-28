@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2bxrlv0rbfck"]
 
 [ext_resource type="Script" uid="uid://maeycqy1ch8s" path="res://death_screen.gd" id="1_6bi5g"]
-[ext_resource type="Texture2D" uid="uid://ctrvus5gbddsl" path="res://Design/fat cat background.png" id="2_y0ggs"]
+[ext_resource type="Texture2D" uid="uid://de6r3vs221b5h" path="res://Design/end_screen_pic.png" id="2_6bi5g"]
 [ext_resource type="FontFile" uid="uid://0esrf7sfcki7" path="res://Design/PublicPixel-rv0pA.ttf" id="3_hhlqb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f562y"]
-texture = ExtResource("2_y0ggs")
-modulate_color = Color(0.44097933, 0.44097927, 0.44097927, 1)
+texture = ExtResource("2_6bi5g")
+modulate_color = Color(0.75188184, 0.7518812, 0.75188136, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s44ck"]
 bg_color = Color(0.31153145, 0.182206, 0.15753415, 0.78039217)
