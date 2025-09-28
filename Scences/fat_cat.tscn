@@ -380,7 +380,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ugx"]
-size = Vector2(82, 61)
+size = Vector2(104, 85.5)
 
 [node name="FatCat" type="CharacterBody2D"]
 collision_layer = 2
@@ -389,14 +389,14 @@ script = ExtResource("1_k0g2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-6, -99)
+position = Vector2(-7.9999995, -96.99999)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_5y58t")
 animation = &"moving"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 25.5)
+position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_f1ugx")
 
 [node name="eatTimer" type="Timer" parent="."]
