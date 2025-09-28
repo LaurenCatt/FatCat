@@ -1,4 +1,7 @@
+
 [gd_scene load_steps=0 format=3 uid="uid://bkufdidir4ob8"]
+[gd_scene load_steps=2 format=3 uid="uid://bkufdidir4ob8"]
+[ext_resource type="Script" uid="uid://b4bn13jicn4l4" path="res://Scripts/dialogue_2.gd" id="1_vb880"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -7,8 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vb880")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1148.0
+offset_bottom = 425.0
