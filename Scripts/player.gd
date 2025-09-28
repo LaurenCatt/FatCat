@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 var player_health = 100
 
+var alive = true
 
+var can_eat = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -13,19 +15,28 @@ func _process(_delta):
 	if direction.x<0:
 		animated_sprite.flip_h = true
 		
+	if alive:
+		velocity = direction*500
+		move_and_slide()
 	
-	velocity = direction*500
-	move_and_slide()
+	if alive and can_eat:
+		if !velocity:  
+			animated_sprite.play("idle")
+		if velocity:
+			animated_sprite.play("moving")
 	
-	if !velocity:  
-		animated_sprite.play("idle")
-	if velocity:
-		animated_sprite.play("moving")
-	
+			
+			
+	if Input.is_action_pressed("pick_up") and can_eat:
+		animated_sprite.play("piking up item")
+		can_eat = false
+		$eatTimer.start()
 		
+	if alive and player_health<=0:
+		animated_sprite.play("death")
+		alive = false
 		
-		
-
+	
 
 
 	
@@ -34,3 +45,7 @@ func _process(_delta):
 
 
 	
+
+
+func _on_eat_timer_timeout() -> void:
+	can_eat = true

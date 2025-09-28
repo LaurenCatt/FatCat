@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var  speed: float = 90
 @export var player_path: NodePath
-
+var health = 1
 var player: CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -33,6 +33,7 @@ func _update_animation(dir: Vector2):
 				anim.play("left")
 		else:
 			if abs(dir.y) > 0:
-				anim.play("down")
+				anim.play("back")
 			else:
 				anim.play("up")
+				

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var  speed: float = 90
 @export var player_path: NodePath
-
+var health= 1
 var player: CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D

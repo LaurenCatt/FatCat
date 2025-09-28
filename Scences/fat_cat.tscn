@@ -1,7 +1,19 @@
-[gd_scene load_steps=51 format=3 uid="uid://l8x2bmfoc831"]
+[gd_scene load_steps=54 format=3 uid="uid://l8x2bmfoc831"]
 
 [ext_resource type="Script" uid="uid://06e65lc1amt4" path="res://Scripts/player.gd" id="1_k0g2o"]
 [ext_resource type="Texture2D" uid="uid://vlu80d0n4a1h" path="res://Design/Cat_Sprite_Sheet.png" id="2_2bc1i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp31m"]
+atlas = ExtResource("2_2bc1i")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4rdi"]
+atlas = ExtResource("2_2bc1i")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3p1o"]
+atlas = ExtResource("2_2bc1i")
+region = Rect2(96, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngpdq"]
 atlas = ExtResource("2_2bc1i")
@@ -191,6 +203,20 @@ region = Rect2(96, 192, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qp31m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4rdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3p1o")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ngpdq")
 }, {
 "duration": 1.0,
@@ -364,9 +390,8 @@ texture_filter = 1
 position = Vector2(-6, -99)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_5y58t")
-animation = &"hurt"
+animation = &"moving"
 autoplay = "idle"
-frame_progress = 0.0204715
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 1)
