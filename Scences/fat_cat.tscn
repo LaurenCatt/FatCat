@@ -380,7 +380,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ugx"]
-size = Vector2(68, 110)
+size = Vector2(82, 61)
 
 [node name="FatCat" type="CharacterBody2D"]
 script = ExtResource("1_k0g2o")
@@ -394,7 +394,7 @@ animation = &"moving"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 1)
+position = Vector2(-3, 25.5)
 shape = SubResource("RectangleShape2D_f1ugx")
 
 [node name="eatTimer" type="Timer" parent="."]
