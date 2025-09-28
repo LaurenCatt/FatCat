@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
+var player_health = 100
 
 
-var can_attack: bool = true
 
 var can_eat: bool = true
 
@@ -20,24 +20,17 @@ func _process(_delta):
 	velocity = direction*500
 	move_and_slide()
 	
-	if can_attack:
+	if can_eat:
 		if !velocity:  
 			animated_sprite.play("idle")
 		if velocity:
 			animated_sprite.play("moving")
-	if Input.is_action_pressed("attack") and can_attack:
-		
-		var slash_markers = $slash.get_children()
-		var selected_slash = slash_markers[randi()%slash_markers.size()]
-		
-		animated_sprite.play("attack")
-		can_attack = false
-		$attackTimer.start()
-		slash.emit(selected_slash.global_position,direction)
+	if Input.is_action_pressed("pick_up") and can_eat:
+		animated_sprite.play("piking up item")
+		can_eat = false
+		$eatTimer.start()
 		
 		
-	if Input.is_action_just_pressed("eating") and can_eat:
-		print("can eat")
 		
 
 
@@ -46,6 +39,9 @@ func _process(_delta):
 
 
 
-func _on_attack_timer_timeout() -> void:
-	can_attack = true
+
 	
+
+
+func _on_eat_timer_timeout() -> void:
+	can_eat = true
