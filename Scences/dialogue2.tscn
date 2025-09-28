@@ -1,6 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkufdidir4ob8"]
 
-[gd_scene load_steps=2 format=3 uid="uid://bkufdidir4ob8"]
 [ext_resource type="Script" uid="uid://b4bn13jicn4l4" path="res://Scripts/dialogue_2.gd" id="1_vb880"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_88a6s"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -12,6 +13,32 @@ grow_vertical = 2
 script = ExtResource("1_vb880")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -227.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Panel/RichTextLabel"]
 layout_mode = 0
-offset_right = 1148.0
-offset_bottom = 425.0
+offset_left = 83.0
+offset_top = 2.0
+offset_right = 1035.0
+offset_bottom = 182.0
+bbcode_enabled = true
+fit_content = true
+script = ExtResource("2_88a6s")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
