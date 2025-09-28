@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkufdidir4ob8"]
+[gd_scene load_steps=8 format=3 uid="uid://bkufdidir4ob8"]
 
 [ext_resource type="Script" uid="uid://b4bn13jicn4l4" path="res://Scripts/dialogue_2.gd" id="1_vb880"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_88a6s"]
+[ext_resource type="FontFile" uid="uid://0esrf7sfcki7" path="res://Design/PublicPixel-rv0pA.ttf" id="2_j6v48"]
 [ext_resource type="Texture2D" uid="uid://cbi76gx0qneme" path="res://Design/lore_backdrop.png" id="2_m6xxl"]
+
+[sub_resource type="Theme" id="Theme_g5xsg"]
+default_font = ExtResource("2_j6v48")
+default_font_size = 22
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6v48"]
 texture = ExtResource("2_m6xxl")
@@ -13,7 +18,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.40260214, 0.4026048, 0.40260226, 1)
+border_color = Color(0.9275334, 0.92753345, 0.9275333, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -36,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_g5xsg")
 theme_override_styles/panel = SubResource("StyleBoxTexture_j6v48")
 metadata/_edit_use_anchors_ = true
 

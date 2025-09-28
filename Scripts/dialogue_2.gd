@@ -58,3 +58,5 @@ func _ready() -> void:
 				prev_mouse = mouse_now
 		# Advance to the next line
 		next_id = line.next_id
+	
+	get_tree().change_scene_to_file("res://Scences/Game.tscn")
