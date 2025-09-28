@@ -12,7 +12,7 @@ func _process(_delta):
 	
 	look_at(get_global_mouse_position())
 	
-	var player_direction = (get_global_mouse_position()-position).normalized()
+	var _player_direction = (get_global_mouse_position()-position).normalized()
 	if !velocity:  
 		animated_sprite.play("idle")
 	if velocity:

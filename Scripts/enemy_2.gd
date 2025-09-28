@@ -11,7 +11,7 @@ var player: CharacterBody2D
 func _ready():
 	player = get_node(player_path)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not player:
 		return
 
