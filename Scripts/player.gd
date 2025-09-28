@@ -4,9 +4,6 @@ var player_health = 100
 
 
 
-var can_eat: bool = true
-
-signal slash(pos,direction)
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _process(_delta):
@@ -20,15 +17,11 @@ func _process(_delta):
 	velocity = direction*500
 	move_and_slide()
 	
-	if can_eat:
-		if !velocity:  
-			animated_sprite.play("idle")
-		if velocity:
-			animated_sprite.play("moving")
-	if Input.is_action_pressed("pick_up") and can_eat:
-		animated_sprite.play("piking up item")
-		can_eat = false
-		$eatTimer.start()
+	if !velocity:  
+		animated_sprite.play("idle")
+	if velocity:
+		animated_sprite.play("moving")
+	
 		
 		
 		
@@ -41,7 +34,3 @@ func _process(_delta):
 
 
 	
-
-
-func _on_eat_timer_timeout() -> void:
-	can_eat = true
