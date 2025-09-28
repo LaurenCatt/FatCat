@@ -14,13 +14,13 @@ func _ready() -> void:
 			break
 		# The addon DialogueLabel accepts a DialogueLine via `dialogue_line` and will handle typing.
 		dialogue_label.dialogue_line = line
-		# Wait until the label has finished typing. The DialogueLabel exposes `finished_typing` in the addon.
-		if dialogue_label.has_method("finished_typing"):
-			# If finished_typing is a Signal, yield on it; otherwise wait a short frame as fallback.
-			if dialogue_label.finished_typing is Signal:
-				await dialogue_label.finished_typing
-			else:
-				# Fallback: give the engine a tick so UI updates
-				await Engine.get_main_loop().process_frame
+		# Start typing and wait for the `finished_typing` signal emitted by DialogueLabel
+		if dialogue_label.has_method("type_out"):
+			dialogue_label.type_out()
+			# Wait for the signal
+			await dialogue_label.finished_typing
+		else:
+			# Fallback: just show the text if the custom method isn't available
+			dialogue_label.text = line.text
 		# Advance to the next line
 		next_id = line.next_id
