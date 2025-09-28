@@ -383,6 +383,8 @@ animations = [{
 size = Vector2(82, 61)
 
 [node name="FatCat" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_k0g2o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -399,4 +401,7 @@ shape = SubResource("RectangleShape2D_f1ugx")
 
 [node name="eatTimer" type="Timer" parent="."]
 
+[node name="deathTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="eatTimer" to="." method="_on_eat_timer_timeout"]
+[connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

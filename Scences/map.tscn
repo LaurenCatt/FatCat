@@ -22,8 +22,6 @@ scale = Vector2(6.647, 3.43)
 texture = ExtResource("2_4i0n0")
 
 [node name="FatCat" parent="." groups=["player"] instance=ExtResource("3_hg4cd")]
-collision_layer = 2
-collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
