@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7yi3qh1t3t35"]
+[gd_scene load_steps=6 format=3 uid="uid://c7yi3qh1t3t35"]
 
-[ext_resource type="Script" uid="uid://chor4t82ajfdc" path="res://Scences/GameManager.gd" id="1_cfilp"]
+[ext_resource type="Script" uid="uid://bmhwccvxs6qs8" path="res://Scences/GameManager.gd" id="1_cfilp"]
 [ext_resource type="Texture2D" uid="uid://qfjmll5644sa" path="res://Design/Untitled_Artwork.jpg" id="2_r5lnj"]
 [ext_resource type="PackedScene" uid="uid://l8x2bmfoc831" path="res://Scences/fat_cat.tscn" id="3_j8ihx"]
 [ext_resource type="PackedScene" uid="uid://dsij0684frd0i" path="res://Scences/enemy.tscn" id="4_x1vvb"]
-[ext_resource type="PackedScene" uid="uid://cbwfvunwt6wv0" path="res://Scences/enemy_2.tscn" id="5_tg0h4"]
-[ext_resource type="PackedScene" uid="uid://ihba4wbjo3c7" path="res://Scences/enemy_3.tscn" id="6_q7844"]
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="5_xjhp6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_cfilp")
@@ -29,12 +28,10 @@ position_smoothing_enabled = true
 position = Vector2(335, 143)
 player_path = NodePath("../FatCat")
 
-[node name="Rat2" parent="." instance=ExtResource("5_tg0h4")]
-position = Vector2(168, -218)
-player_path = NodePath("../FatCat")
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("5_xjhp6")
+enemy_scene = ExtResource("4_x1vvb")
 
-[node name="Rat3" parent="." instance=ExtResource("6_q7844")]
-position = Vector2(275, -67)
-player_path = NodePath("../FatCat")
+[node name="Timer" type="Timer" parent="Spawner"]
 
 [connection signal="area_entered" from="FatCat/deathzone" to="." method="_on_deathzone_area_entered"]
