@@ -9,7 +9,7 @@ func _ready() -> void:
 	# so any dialogue that references `self` can access this node if needed.
 	var next_id: String = "start"
 	while true:
-		var line = await resource.get_next_dialogue_line(next_id, [self])
+		var line = await resource.get_next_dialogue_line(next_id)
 		if not line:
 			break
 		# The addon DialogueLabel accepts a DialogueLine via `dialogue_line` and will handle typing.
@@ -24,4 +24,3 @@ func _ready() -> void:
 				await Engine.get_main_loop().process_frame
 		# Advance to the next line
 		next_id = line.next_id
-
