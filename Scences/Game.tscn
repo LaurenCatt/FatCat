@@ -1,13 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7yi3qh1t3t35"]
+[gd_scene load_steps=9 format=3 uid="uid://c7yi3qh1t3t35"]
 
-[ext_resource type="Script" uid="uid://chor4t82ajfdc" path="res://Scences/GameManager.gd" id="1_cfilp"]
+[ext_resource type="Script" uid="uid://bmhwccvxs6qs8" path="res://Scences/GameManager.gd" id="1_cfilp"]
 [ext_resource type="Texture2D" uid="uid://qfjmll5644sa" path="res://Design/Untitled_Artwork.jpg" id="2_r5lnj"]
 [ext_resource type="PackedScene" uid="uid://l8x2bmfoc831" path="res://Scences/fat_cat.tscn" id="3_j8ihx"]
 [ext_resource type="PackedScene" uid="uid://dsij0684frd0i" path="res://Scences/enemy.tscn" id="4_x1vvb"]
-[ext_resource type="PackedScene" uid="uid://cbwfvunwt6wv0" path="res://Scences/enemy_2.tscn" id="5_tg0h4"]
-[ext_resource type="PackedScene" uid="uid://ihba4wbjo3c7" path="res://Scences/enemy_3.tscn" id="6_q7844"]
+[ext_resource type="Script" uid="uid://4sn7q03r3g8d" path="res://Scripts/spawner.gd" id="5_xjhp6"]
+[ext_resource type="Script" uid="uid://bdgp8sd8kmnr2" path="res://Scences/items.gd" id="6_j8ihx"]
+[ext_resource type="PackedScene" uid="uid://xqh4ntcqyi70" path="res://Scences/cat_nip.tscn" id="6_r5lnj"]
+[ext_resource type="PackedScene" uid="uid://bqdhyfbqng3mr" path="res://Scences/treat.tscn" id="7_j8ihx"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_cfilp")
 
 [node name="map" type="Node2D" parent="."]
@@ -17,6 +22,7 @@ scale = Vector2(6.647, 3.43)
 texture = ExtResource("2_r5lnj")
 
 [node name="FatCat" parent="." instance=ExtResource("3_j8ihx")]
+position = Vector2(-299, -51)
 
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
@@ -25,16 +31,20 @@ position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FatCat/deathzone"]
 
-[node name="Rats" parent="." instance=ExtResource("4_x1vvb")]
-position = Vector2(335, 143)
-player_path = NodePath("../FatCat")
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("5_xjhp6")
+enemy_scene = ExtResource("4_x1vvb")
 
-[node name="Rat2" parent="." instance=ExtResource("5_tg0h4")]
-position = Vector2(168, -218)
-player_path = NodePath("../FatCat")
+[node name="Timer" type="Timer" parent="Spawner"]
 
-[node name="Rat3" parent="." instance=ExtResource("6_q7844")]
-position = Vector2(275, -67)
-player_path = NodePath("../FatCat")
+[node name="items" type="Node" parent="."]
+script = ExtResource("6_j8ihx")
+
+[node name="cat_nip" parent="items" instance=ExtResource("6_r5lnj")]
+
+[node name="treat" parent="items" instance=ExtResource("7_j8ihx")]
+position = Vector2(156, -21)
 
 [connection signal="area_entered" from="FatCat/deathzone" to="." method="_on_deathzone_area_entered"]
+[connection signal="timeout" from="Spawner/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
