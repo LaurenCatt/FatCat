@@ -56,6 +56,21 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_g5xsg")
 theme_override_styles/background = SubResource("StyleBoxFlat_g5xsg")
 
+[node name="CharacterLabel" type="Label" parent="Panel"]
+layout_mode = 0
+anchors_preset = 9
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -16.0
+offset_bottom = 36.0
+valign = 0
+autowrap = true
+text = ""
+
 [node name="DialogueLabel" type="RichTextLabel" parent="Panel/RichTextLabel"]
 layout_mode = 1
 anchors_preset = 8
