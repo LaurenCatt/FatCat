@@ -2,8 +2,8 @@ extends Control
 
 
 func _on_start_pressed() -> void:
-	print("Start button pressed")
+	get_tree().change_scene_to_file("res://Scences/dialogue2.tscn")
 
 
 func _on_exit_pressed() -> void:
-	print("Exit button pressed ")
+	get_tree().quit()
