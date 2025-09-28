@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk163nlqqqywh"]
+[gd_scene load_steps=6 format=3 uid="uid://bk163nlqqqywh"]
 
-[ext_resource type="Script" uid="uid://chor4t82ajfdc" path="res://Scences/GameManager.gd" id="1_dqij7"]
 [ext_resource type="Texture2D" uid="uid://qfjmll5644sa" path="res://Design/Untitled_Artwork.jpg" id="2_4i0n0"]
 [ext_resource type="PackedScene" uid="uid://l8x2bmfoc831" path="res://Scences/fat_cat.tscn" id="3_hg4cd"]
-[ext_resource type="PackedScene" uid="uid://b7ouhge3mp7uc" path="res://Scences/enemy_spawner.tscn" id="4_iof7d"]
+[ext_resource type="PackedScene" uid="uid://dsij0684frd0i" path="res://Scences/enemy.tscn" id="4_eq8pa"]
+[ext_resource type="Script" uid="uid://4sn7q03r3g8d" path="res://Scripts/spawner.gd" id="4_iof7d"]
+
+[sub_resource type="GDScript" id="GDScript_bl2b3"]
+script/source = "extends Node2D
+
+@export var enemy_scene : PackedScene
+"
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_dqij7")
+script = SubResource("GDScript_bl2b3")
 
 [node name="map" type="Node2D" parent="."]
 
@@ -15,18 +21,15 @@ position = Vector2(-60.0002, -26.0001)
 scale = Vector2(6.647, 3.43)
 texture = ExtResource("2_4i0n0")
 
-[node name="FatCat" parent="." instance=ExtResource("3_hg4cd")]
+[node name="FatCat" parent="." groups=["player"] instance=ExtResource("3_hg4cd")]
 
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
 
-[node name="EnemySpawner" parent="." instance=ExtResource("4_iof7d")]
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("4_iof7d")
+enemy_scene = ExtResource("4_eq8pa")
 
-[node name="SpawnPoints" type="Node2D" parent="EnemySpawner"]
+[node name="Timer" type="Timer" parent="Spawner"]
 
-[node name="Marker2D" type="Marker2D" parent="EnemySpawner/SpawnPoints"]
-position = Vector2(47, 86)
-
-[node name="Marker2D2" type="Marker2D" parent="EnemySpawner/SpawnPoints"]
-position = Vector2(101, 35)
-scale = Vector2(-5870.36, -553.008)
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

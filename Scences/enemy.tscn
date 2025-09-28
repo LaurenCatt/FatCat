@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsij0684frd0i"]
+[gd_scene load_steps=17 format=3 uid="uid://dsij0684frd0i"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_6yvqy"]
 [ext_resource type="Texture2D" uid="uid://dni1sa0c8stk4" path="res://Design/Rats.png" id="1_7k104"]
-[ext_resource type="PackedScene" uid="uid://t3ejypfet78p" path="res://Scences/hurt_box.tscn" id="3_lw4pj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwjut"]
 atlas = ExtResource("1_7k104")
@@ -111,16 +110,20 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nx23"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k104"]
+radius = 4.99969
+height = 25.9984
 
 [node name="Rats" type="CharacterBody2D"]
 script = ExtResource("1_6yvqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.19209e-07, -1.19209e-07)
+scale = Vector2(1.20833, 1.20833)
 sprite_frames = SubResource("SpriteFrames_pwjut")
-animation = &"back"
+animation = &"up"
 
-[node name="HurtBox" parent="." instance=ExtResource("3_lw4pj")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-shape = SubResource("RectangleShape2D_3nx23")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 7)
+rotation = -1.55958
+shape = SubResource("CapsuleShape2D_7k104")

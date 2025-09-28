@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctrvus5gbddsl"
-path="res://.godot/imported/fat cat background.png-2311093b9ab6e8fe04ac22649c7291a5.ctex"
+uid="uid://bjbcfxsoairo6"
+path="res://.godot/imported/lore_backdrop.png-36cf6dcf2522989f0104f16ee78d57fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Design/fat cat background.png"
-dest_files=["res://.godot/imported/fat cat background.png-2311093b9ab6e8fe04ac22649c7291a5.ctex"]
+source_file="res://lore_backdrop.png"
+dest_files=["res://.godot/imported/lore_backdrop.png-36cf6dcf2522989f0104f16ee78d57fd.ctex"]
 
 [params]
 

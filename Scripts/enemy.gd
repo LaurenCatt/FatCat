@@ -36,3 +36,4 @@ func _update_animation(dir: Vector2):
 				anim.play("back")
 			else:
 				anim.play("up")
+				
