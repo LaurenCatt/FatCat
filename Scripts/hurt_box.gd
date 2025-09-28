@@ -1,7 +1,7 @@
 extends Area2D
-@onready var player: CharacterBody2D  = %fat_cat
+var player = preload("res://Scences/fat_cat.tscn")
+var rat = preload("res://Scences/enemy.tscn")
 
-
-func _on_area_entered(area: Area2D) -> void:
-	player.player_health-=25
-	
+func _on_body_entered(player) -> void:
+	player.player_health-=10
+	rat.health-=1

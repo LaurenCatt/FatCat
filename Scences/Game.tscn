@@ -13,7 +13,6 @@ script = ExtResource("1_cfilp")
 [node name="map" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="map"]
-position = Vector2(-60.0002, -26.0001)
 scale = Vector2(6.647, 3.43)
 texture = ExtResource("2_r5lnj")
 
@@ -22,10 +21,20 @@ texture = ExtResource("2_r5lnj")
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
 
+[node name="deathzone" type="Area2D" parent="FatCat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FatCat/deathzone"]
+
 [node name="Rats" parent="." instance=ExtResource("4_x1vvb")]
+position = Vector2(335, 143)
+player_path = NodePath("../FatCat")
 
 [node name="Rat2" parent="." instance=ExtResource("5_tg0h4")]
+position = Vector2(168, -218)
 player_path = NodePath("../FatCat")
 
 [node name="Rat3" parent="." instance=ExtResource("6_q7844")]
+position = Vector2(275, -67)
 player_path = NodePath("../FatCat")
+
+[connection signal="area_entered" from="FatCat/deathzone" to="." method="_on_deathzone_area_entered"]
