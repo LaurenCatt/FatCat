@@ -1,11 +1,12 @@
 ~ start
-StoryTeller: In the city of[wave amp=50.0 freq=5.0 connected=2]{Zuzu City}[/wave]
-StoryTeller: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+StoryTeller: Long ago, cats and rats peacfully coexisted in allyways of every city.
+StoryTeller: However, DadCat wasn't satisfied, he wanted more.
+
+StoryTeller: To DadCat, rats were inferior in every way.
+StoryTeller: He succumbed the the allyways into a nightmarish abyss; while, he and other cats became greedy overlords.
+StoryTeller: Now years later, in the deep spooky depths of [wave amp=50.0 freq=4.0 connected=1.5] Zuzu City [/wave]
+StoryTeller: DadCats' beloved son now rules with the same cruel iron fist...
+StoryTeller: However, in the small dark allyway corners
+StoryTeller: an uprising begins.
+
 => END
