@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkufdidir4ob8"]
+[gd_scene load_steps=7 format=3 uid="uid://bkufdidir4ob8"]
 
 [ext_resource type="Script" uid="uid://b4bn13jicn4l4" path="res://Scripts/dialogue_2.gd" id="1_vb880"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_88a6s"]
+[ext_resource type="Texture2D" uid="uid://cbi76gx0qneme" path="res://Design/lore_backdrop.png" id="2_m6xxl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6v48"]
+texture = ExtResource("2_m6xxl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5xsg"]
+bg_color = Color(0.36444443, 0.46210653, 0.26103747, 0.9098039)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.40260214, 0.4026048, 0.40260226, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjvy8"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -13,12 +31,14 @@ grow_vertical = 2
 script = ExtResource("1_vb880")
 
 [node name="Panel" type="Panel" parent="."]
+modulate = Color(0.74978, 0.74978, 0.74977994, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j6v48")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
@@ -27,16 +47,29 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 86.0
 offset_top = -227.0
+offset_right = -71.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_g5xsg")
+theme_override_styles/background = SubResource("StyleBoxFlat_g5xsg")
 
 [node name="DialogueLabel" type="RichTextLabel" parent="Panel/RichTextLabel"]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 2.0
-offset_right = 1035.0
-offset_bottom = 182.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.5
+offset_top = -87.0
+offset_right = 443.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mjvy8")
 bbcode_enabled = true
 fit_content = true
 script = ExtResource("2_88a6s")
