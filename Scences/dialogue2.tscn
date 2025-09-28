@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkufdidir4ob8"]
+[gd_scene load_steps=6 format=3 uid="uid://bkufdidir4ob8"]
 
 [ext_resource type="Script" uid="uid://b4bn13jicn4l4" path="res://Scripts/dialogue_2.gd" id="1_vb880"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_88a6s"]
@@ -18,8 +18,6 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjvy8"]
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -56,21 +54,6 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_g5xsg")
 theme_override_styles/background = SubResource("StyleBoxFlat_g5xsg")
 
-[node name="CharacterLabel" type="Label" parent="Panel"]
-layout_mode = 0
-anchors_preset = 9
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-offset_left = 16.0
-offset_top = 8.0
-offset_right = -16.0
-offset_bottom = 36.0
-valign = 0
-autowrap = true
-text = ""
-
 [node name="DialogueLabel" type="RichTextLabel" parent="Panel/RichTextLabel"]
 layout_mode = 1
 anchors_preset = 8
@@ -84,9 +67,24 @@ offset_right = 443.5
 offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_mjvy8")
 bbcode_enabled = true
 fit_content = true
+tab_size = 10
+vertical_alignment = 1
 script = ExtResource("2_88a6s")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[node name="CharacterLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.020833334
+anchor_top = 0.0046296297
+anchor_right = 0.4453125
+anchor_bottom = 0.0046296297
+offset_left = 94.0
+offset_top = 433.0
+offset_right = 62.0
+offset_bottom = 461.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
