@@ -1,11 +1,11 @@
 ~ start
-StoryTeller: Long ago, cats and rats peacfully coexisted in allyways of every city.
-StoryTeller: However, DadCat wasn't satisfied, he wanted more.
-
-StoryTeller: To DadCat, rats were inferior in every way.
-StoryTeller: He succumbed the the allyways into a nightmarish abyss; while, he and other cats became greedy overlords.
-StoryTeller: Now years later, in the deep spooky depths of [wave amp=50.0 freq=4.0 connected=1.5] Zuzu City [/wave]
-StoryTeller: DadCats' beloved son now rules with the same cruel iron fist...
-StoryTeller: However, in the small dark allyway corners
-StoryTeller: an uprising begins.
+StoryTeller: Long ago, cats and rats peacfully coexisted in alleyways of every city.
+StoryTeller: However, DadCat wasn't satisfied, he wanted [wave]more[/wave].
+StoryTeller: To DadCat, rats were [wave]inferior[/wave] in every way.
+StoryTeller: He succumbed the the alleyways into a [wave]nightmarish abyss;[/wave] while, he and other cats became greedy overlords.
+StoryTeller: Now years later, in the deep spooky depths of [wave]Zuzu City[/wave]
+StoryTeller: DadCat's beloved [wave]son[/wave] now rules with the same cruel iron fist.
+StoryTeller: However, [wave]lurking[/wave] in the small dark alleyway corners...
+StoryTeller: an [wave]uprising[/wave] begins. 
+Use WASD to flee, game over if you're hit!
 => END
