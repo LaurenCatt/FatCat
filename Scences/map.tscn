@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bk163nlqqqywh"]
 
-[ext_resource type="Texture2D" uid="uid://qfjmll5644sa" path="res://Design/Untitled_Artwork.jpg" id="2_4i0n0"]
+[ext_resource type="Texture2D" uid="uid://lpqxhuklojfb" path="res://Design/images.png" id="1_iof7d"]
 [ext_resource type="PackedScene" uid="uid://l8x2bmfoc831" path="res://Scences/fat_cat.tscn" id="3_hg4cd"]
 [ext_resource type="PackedScene" uid="uid://dsij0684frd0i" path="res://Scences/enemy.tscn" id="4_eq8pa"]
 [ext_resource type="Script" uid="uid://4sn7q03r3g8d" path="res://Scripts/spawner.gd" id="4_iof7d"]
@@ -17,9 +17,24 @@ script = SubResource("GDScript_bl2b3")
 [node name="map" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="map"]
-position = Vector2(-60.0002, -26.0001)
-scale = Vector2(6.647, 3.43)
-texture = ExtResource("2_4i0n0")
+position = Vector2(-144, -84.00001)
+scale = Vector2(3.1089554, 2.561995)
+texture = ExtResource("1_iof7d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="map"]
+position = Vector2(-145.13919, 348.4361)
+scale = Vector2(3.1282852, 2.129327)
+texture = ExtResource("1_iof7d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="map"]
+position = Vector2(755.99994, -85.99999)
+scale = Vector2(3.4186342, 2.6061022)
+texture = ExtResource("1_iof7d")
+
+[node name="Sprite2D4" type="Sprite2D" parent="map"]
+position = Vector2(756.9303, 350.0626)
+scale = Vector2(3.4186883, 2.1190822)
+texture = ExtResource("1_iof7d")
 
 [node name="FatCat" parent="." groups=["player"] instance=ExtResource("3_hg4cd")]
 

@@ -13,7 +13,7 @@ var player: CharacterBody2D
 @export var aggro_pursue_time: float = 3.0
 var _is_aggro: bool = false
 var _last_seen: float = 0.0
-
+@export var damage: int = 10
 func _ready():
 	# Resolve player either via exported player_path (if valid) or fallback to 'player' group
 	if player == null:
@@ -45,6 +45,9 @@ func _physics_process(_delta:float) -> void:
 		velocity = dir * speed
 		move_and_slide()
 		_update_animation(dir)
+		if player and global_position.distance_to(player.global_position) <= 16.0:
+			player.player_health -= damage
+			queue_free()
 	else:
 		# Not aggro: stop movement (replace with patrol/wander if desired)
 		velocity = Vector2.ZERO

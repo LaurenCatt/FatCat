@@ -33,13 +33,13 @@ func _process(_delta):
 		$eatTimer.start()
 		
 	if alive and player_health<=0:
-		animated_sprite.play("death")
-		alive = false
-		$deathTimer.start()
-	
-func _on_eat_timer_timeout() -> void:
+		animated_sp		$deathTimer.start()
+	func _on_eat_timer_timeout() -> void:
 	can_eat = true
 
 func _on_death_timer_timeout() -> void:
 	if !alive:
 		get_tree().change_scene_to_file("res://death_screen.tscn")
+e with function body.
+nc _on_eat_timer_timeout() -> void:
+	can_eat = true
