@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://dah5p5ijiwp3v"]
 
 [ext_resource type="Script" path="res://Scences/treat.gd" id="1_1iq6h"]
 [ext_resource type="Texture2D" path="res://Design/treat.png" id="1_fk4y5"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://bqdhyfbqng3mr"]
+
+[ext_resource type="Script" uid="uid://b2gg4ua203dfm" path="res://Scences/treat.gd" id="1_1iq6h"]
+[ext_resource type="Texture2D" uid="uid://dmtriwoxtetxx" path="res://Design/treat.png" id="1_fk4y5"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1iq6h"]
 radius = 83.3333

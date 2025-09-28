@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://cjqpvap586ku0"]
 
 [ext_resource type="Script" path="res://Scripts/cat_nip.gd" id="1_ra46m"]
 [ext_resource type="Texture2D" path="res://Design/leaf.png" id="1_sehso"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://xqh4ntcqyi70"]
+
+[ext_resource type="Script" uid="uid://dy6x04sith4h8" path="res://Scripts/cat_nip.gd" id="1_ra46m"]
+[ext_resource type="Texture2D" uid="uid://beqqft8w0pwbn" path="res://Design/leaf.png" id="1_sehso"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra46m"]
 size = Vector2(101, 127)
