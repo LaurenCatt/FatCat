@@ -5,26 +5,23 @@ extends CharacterBody2D
 @export var player_path: NodePath
 
 var player: CharacterBody2D
-
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
-	player = get_node(player_path)
+	if player_path != NodePath(""):
+		player = get_node(player_path)
 	
-func _physics_process(_delta):
+func _physics_process(_delta:float) -> void:
 	if not player:
 		return
 
-	var dir= (player.global_position - global_position).normalized()
+	var dir: Vector2 = (player.global_position - global_position).normalized()
 	velocity= dir * speed
 	move_and_slide()
 	_update_animation(dir)
 
-<<<<<<< HEAD
-func _update_animation(dir):
-=======
+	
 func _update_animation(dir: Vector2):
->>>>>>> dd365a897b75c2ab452fc90199f4b78bb669223f
 		if dir == Vector2.ZERO:
 			anim.stop()
 			return
@@ -39,9 +36,3 @@ func _update_animation(dir: Vector2):
 				anim.play("down")
 			else:
 				anim.play("up")
-<<<<<<< HEAD
-				
-
-	
-=======
->>>>>>> dd365a897b75c2ab452fc90199f4b78bb669223f
