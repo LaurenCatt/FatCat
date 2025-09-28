@@ -39,7 +39,6 @@ func _update_animation(dir):
 			return
 		if abs(dir.x) > abs(dir.y):
 			if dir.x > 0:
-
 				anim.play("right")
 			else:
 				anim.play("left")

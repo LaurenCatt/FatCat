@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dsij0684frd0i"]
 
-[ext_resource type="Script" uid="uid://bdc7rpygc28a8" path="res://enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dni1sa0c8stk4" path="res://Rats.png" id="1_7k104"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_6yvqy"]
+[ext_resource type="Texture2D" uid="uid://dni1sa0c8stk4" path="res://Design/Rats.png" id="1_7k104"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwjut"]
 atlas = ExtResource("1_7k104")
@@ -115,9 +115,7 @@ radius = 4.99969
 height = 25.9984
 
 [node name="Rats" type="CharacterBody2D"]
-script = ExtResource("1_4gyqm")
-speed = null
-player_path = null
+script = ExtResource("1_6yvqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pwjut")

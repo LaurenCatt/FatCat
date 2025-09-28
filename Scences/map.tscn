@@ -1,7 +1,32 @@
-[gd_scene format=3 uid="uid://75pnu4ohy0"]
+[gd_scene load_steps=7 format=3 uid="uid://bk163nlqqqywh"]
 
-[node name="Map" type="Node2D"]
+[ext_resource type="Script" uid="uid://chor4t82ajfdc" path="res://Scences/GameManager.gd" id="1_dqij7"]
+[ext_resource type="Texture2D" uid="uid://qfjmll5644sa" path="res://Design/Untitled_Artwork.jpg" id="2_4i0n0"]
+[ext_resource type="PackedScene" uid="uid://l8x2bmfoc831" path="res://Scences/fat_cat.tscn" id="3_hg4cd"]
+[ext_resource type="PackedScene" uid="uid://dsij0684frd0i" path="res://Scences/enemy.tscn" id="4_eq8pa"]
+[ext_resource type="PackedScene" uid="uid://cbwfvunwt6wv0" path="res://Scences/enemy_2.tscn" id="5_4dji7"]
+[ext_resource type="PackedScene" uid="uid://ihba4wbjo3c7" path="res://Scences/enemy_3.tscn" id="6_lc1mp"]
 
-[node name="City" type="Node2D" parent="."]
+[node name="Game" type="Node2D"]
+script = ExtResource("1_dqij7")
 
-[node name="Sprite2D" type="Sprite2D" parent="City"]
+[node name="map" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="map"]
+position = Vector2(-60.0002, -26.0001)
+scale = Vector2(6.647, 3.43)
+texture = ExtResource("2_4i0n0")
+
+[node name="FatCat" parent="." instance=ExtResource("3_hg4cd")]
+
+[node name="Camera2D" type="Camera2D" parent="FatCat"]
+position_smoothing_enabled = true
+
+[node name="Rats" parent="." instance=ExtResource("4_eq8pa")]
+player_path = NodePath("../FatCat")
+
+[node name="Rat2" parent="." instance=ExtResource("5_4dji7")]
+player_path = NodePath("../FatCat")
+
+[node name="Rat3" parent="." instance=ExtResource("6_lc1mp")]
+player_path = NodePath("../FatCat")
